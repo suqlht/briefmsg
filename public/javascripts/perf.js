@@ -1,12 +1,8 @@
 (
 function(){
   var printtimes = function(){
-    console.log(performance.timing.loadEventEnd - performance.timing.navigationStart);
+    console.log(performance.timing.loadEventStart - performance.timing.navigationStart);
   };
-  var executor = function(){
-    window.addEventListener("load",printtimes);
-
+  window.addEventListener("load",printtimes,false);
   }
-  return executor;
-}
 )();
