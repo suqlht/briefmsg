@@ -1,7 +1,7 @@
 (
 function(){
   var printtimes = function(){
-    console.log(performance.timing.loadEventStart - performance.timing.navigationStart);
+    setTimeout(function(){console.log(performance.timing.loadEventEnd - performance.timing.navigationStart)},1000);
   };
   window.addEventListener("load",printtimes,false);
   }
