@@ -1,0 +1,23 @@
+    <% 
+       // var sites=require('siteslist');
+
+        var sites={
+    baidu:'http://news.baidu.com',
+	fb:'www.facebook.com'
+	}
+ 
+    
+    %>
+    
+    <ul class="nav nav-pills">
+   <li><a href="/">Home</a></li>
+   <li class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="/news">News<span class="caret"></span></a>
+     <ul class="dropdown-menu">
+          <li><a href="javascript:window.location.reload();">Refresh</a></li>
+          <% Object.keys(sites).forEach(function(key) { %>
+          <li><a href="/news/<%=key%>"><%= key %></a></li>
+          <% } )%>
+       </ul>
+
+   </li>
+</ul>
