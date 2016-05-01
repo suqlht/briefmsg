@@ -3,5 +3,5 @@
  */
 exports.websites={
     baidu:'http://news.baidu.com',
-	fb:'www.facebook.com'
+	fb:'https://www.facebook.com'
 	}
