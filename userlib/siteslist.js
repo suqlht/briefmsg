@@ -1,7 +1,7 @@
 /**
  * http://usejsdoc.org/
  */
-exports.websites={
+exports.sites={
     baidu:'http://news.baidu.com',
 	fb:'https://www.facebook.com'
 	}
