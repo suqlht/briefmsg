@@ -13,9 +13,10 @@
   <body>
 <% include ../headnav.ejs %>
 <ul>
-<% list.forEach(function(value){ %>
-<li><a><%= value %></a></li>
-<%});%>
+<% list.forEach(function(obj){ %>
+<li><a href="/downloads/<%= obj.name %>"><%= obj.name %></a>(size:<%= obj.size %>)</li>
+
+<% }); %>
 </ul>
   </body>
 </html>
