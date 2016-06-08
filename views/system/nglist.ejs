@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" defer src="/javascripts/perf.js"></script>
+
+  </head>
+  <body>
+<% include ../headnav.ejs %>
+
+<div  ng-app="myApp" ng-controller="myCtrl">
+<button id="btn1">12</button>
+<script>
+
+
+document.getElementById('btn1').onclick=function(){console.log('bodyclick');};
+
+</script>
+<ul>
+
+<li ng-repeat="file in filelist"><a href="/downloads/{{ file.name }}">{{ file.name }}</a>(size:{{ file.size }})</li>
+
+
+</ul> 	
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("/system/data/<%= key %>").success(
+  function (response) {$scope.filelist = response;}
+  );
+});
+</script>
+
+  </body>
+</html>
